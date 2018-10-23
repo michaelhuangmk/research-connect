@@ -242,6 +242,7 @@ app.post('/', function (req, res) {
     debug("minGPA: " + data.minGPA);
     debug("minHours: " + data.minHours);
     debug("maxHours: " + data.maxHours);
+    debug("additionalInformation: " + data.additionalInformation);
     debug("opens: " + data.opens);
     debug("closes: " + data.closes);
     debug("areas: " + data.areas);
@@ -329,6 +330,7 @@ app.post('/', function (req, res) {
             minGPA: data.minGPA,
             minHours: data.minHours,
             maxHours: maxHours,
+            additonalInformation: additonalInformation, 
             opens: data.opens,
             closes: data.closes,
             areas: data.areas,
@@ -417,6 +419,7 @@ app.put('/:id', function (req, res) {
             opportunity.minGPA = req.body.minGPA || opportunity.minGPA;
             opportunity.minHours = req.body.minHours || opportunity.minHours;
             opportunity.maxHours = req.body.maxHours || opportunity.maxHours;
+            opportunity.additionalInformation = req.body.additionalInformation || opportunity.additionalInformation; 
             opportunity.opens = req.body.opens || opportunity.opens;
             opportunity.closes = req.body.closes || opportunity.closes;
             opportunity.areas = req.body.areas || opportunity.areas;

@@ -37,6 +37,7 @@ class EditOppForm extends React.Component {
             closes: moment().add(365, 'days'),
             labName: '',
             supervisor: '',
+            additionalInformation: '',
             numQuestions: 0,
             titleIsValid: false,
             tasksAreValid: false,
@@ -340,6 +341,9 @@ class EditOppForm extends React.Component {
             this.setState({minHours: event.target.value});
         } else if (event.target.name === "max") {
             this.setState({maxHours: event.target.value});
+        }
+        else if (event.target.name === "additional"){
+            this.setState({additionalInformation: event.target.value})
         }
 
 
@@ -685,7 +689,22 @@ class EditOppForm extends React.Component {
                                     </div>
                                 </ReactTooltip>
                             </div>
+                            <div className="row input-row optional">
+                                <textarea className="column column-90"
+                                          placeholder="Additional Information"
+                                          name="additional" type="text" value={this.state.additionalInformation}
+                                          onChange={this.handleChange}/>
 
+                                <InfoIcon data-tip data-for="info-additional" className="column column-5 info-icon"
+                                          size={20}/>
+                                <ReactTooltip place='right' id='info-additional' aria-haspopup='true' role='example'>
+                                <div className="info-text">
+                                        <span>Include any other relevant information to your opportunity not already described in the form.</span>
+
+                                    </div>
+
+                                </ReactTooltip>
+                            </div>
 
                             <div className="date-pick-container ">
                                 <label className="label-inline">Open Application Window: </label>
