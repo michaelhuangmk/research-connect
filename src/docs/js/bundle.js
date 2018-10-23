@@ -59343,27 +59343,25 @@ var EditOppForm = function (_React$Component) {
     }, {
         key: 'createGpaOptions',
         value: function createGpaOptions() {
-            if (this.state.minGPA != '') {
-                var options = [];
-                for (var i = 25; i <= 43; i++) {
-                    options.push(_react2.default.createElement(
-                        'option',
-                        { key: i, value: (i / 10).toString() },
-                        (i / 10).toString()
-                    ));
-                }
-                return _react2.default.createElement(
-                    'select',
-                    { name: 'gpa', className: 'gpa-select column column-90', value: this.state.minGPA,
-                        onChange: this.handleChange },
-                    _react2.default.createElement(
-                        'option',
-                        { key: '', value: '' },
-                        'Select Minimum GPA'
-                    ),
-                    options
-                );
+            var options = [];
+            for (var i = 25; i <= 43; i++) {
+                options.push(_react2.default.createElement(
+                    'option',
+                    { key: i, value: (i / 10).toString() },
+                    (i / 10).toString()
+                ));
             }
+            return _react2.default.createElement(
+                'select',
+                { name: 'gpa', className: 'gpa-select column column-90', value: this.state.minGPA,
+                    onChange: this.handleChange },
+                _react2.default.createElement(
+                    'option',
+                    { key: '', value: '' },
+                    'Select Minimum GPA'
+                ),
+                options
+            );
         }
     }, {
         key: 'setYears',

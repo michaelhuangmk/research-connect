@@ -230,7 +230,6 @@ class EditOppForm extends React.Component {
 
 
     createGpaOptions() {
-        if (this.state.minGPA != '') {
             let options = [];
             for (let i = 25; i <= 43; i++) {
                 options.push(<option key={i} value={(i / 10).toString()}>{(i / 10).toString()}</option>);
@@ -242,7 +241,6 @@ class EditOppForm extends React.Component {
                     {options}
                 </select>
             );
-        }
 
     }
 
